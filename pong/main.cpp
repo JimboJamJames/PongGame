@@ -2,6 +2,7 @@
 #include <iostream>
 #include "Collisions.h"
 #include "Struct.h"
+#include "GameState.h"
 void main()
 {
 	Ball circle;
@@ -45,4 +46,17 @@ void main()
 	}
 sfw::termContext();
 }
+void gameState()
+{
+	sfw::initContext(800, 600, "NSFW Draw");
+	sfw::setBackgroundColor(BLACK);
 
+	GameState gs = createGameState();
+
+	while (sfw::stepContext())
+	{
+		updateGameState(gs);
+		drawGameState(gs);
+	}
+	sfw::termContext();
+}
