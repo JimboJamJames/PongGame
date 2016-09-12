@@ -3,7 +3,7 @@
 #include <iostream>
 #include "Header.h"
 #include "Collisions.h"
-
+#include "Ball.h"
 
 struct GameState
 {
@@ -16,9 +16,8 @@ struct GameState
 
 
 	bool isXPositive = false, isYPositive = true;
+
+	void init();		// load files, setup players, etc.
+	void update();		// input, collision, movement
+	void draw() const;
 };
-
-GameState createGameState();
-
-void updateGameState(GameState &gs);
-void drawGameState(const GameState &gs);

@@ -1,41 +1,40 @@
 #include "GameState.h"
 
-GameState createGameState()
+void GameState::init()
 {
-	return GameState();
+	
 }
 
-void updateGameState(GameState &gs)
+void GameState::update()
 {
-	Collision(gs.circle);
-	Collision2(gs.circle, gs.LeftPaddle);
-	Collision3(gs.circle, gs.RightPaddle);
+	Collision(circle);
+	Collision2(circle, LeftPaddle);
+	Collision3(circle, RightPaddle);
 
 
-	if (sfw::getKey('W') && gs.LeftPaddle.y < 400)
-		gs.LeftPaddle.y += sfw::getDeltaTime() * 900;
+	if (sfw::getKey('W') && LeftPaddle.y < 400)
+		LeftPaddle.y += sfw::getDeltaTime() * 900;
 
-	if (sfw::getKey('S') && gs.LeftPaddle.y > 0)
-		gs.LeftPaddle.y -= sfw::getDeltaTime() * 900;
-
-
-	if (sfw::getKey('I') && gs.RightPaddle.y < 400)
-		gs.RightPaddle.y += sfw::getDeltaTime() * 600;
-
-	if (sfw::getKey('K') && gs.RightPaddle.y > 0)
-		gs.RightPaddle.y -= sfw::getDeltaTime() * 600;
+	if (sfw::getKey('S') && LeftPaddle.y > 0)
+		LeftPaddle.y -= sfw::getDeltaTime() * 900;
 
 
-	gs.circle.ballX = gs.circle.ballX + gs.circle.momentumX;
-	gs.circle.ballY = gs.circle.ballY + gs.circle.momentumY;
+	if (sfw::getKey('I') && RightPaddle.y < 400)
+		RightPaddle.y += sfw::getDeltaTime() * 600;
 
+	if (sfw::getKey('K') && RightPaddle.y > 0)
+		RightPaddle.y -= sfw::getDeltaTime() * 600;
+
+
+	circle.update();
 }
 
-void drawGameState(const GameState &gs)
+
+void GameState::draw() const
 {
-	sfw::drawLine(gs.LeftPaddle.x, gs.LeftPaddle.y, gs.LeftPaddle.x, gs.LeftPaddle.y + gs.LeftPaddle.size, RED);
+	sfw::drawLine(LeftPaddle.x, LeftPaddle.y, LeftPaddle.x, LeftPaddle.y + LeftPaddle.size, RED);
 
-	sfw::drawLine(gs.RightPaddle.x, gs.RightPaddle.y, gs.RightPaddle.x, gs.RightPaddle.y + gs.RightPaddle.size, RED);
+	sfw::drawLine(RightPaddle.x, RightPaddle.y, RightPaddle.x, RightPaddle.y + RightPaddle.size, RED);
 
-	sfw::drawCircle(gs.circle.ballX, gs.circle.ballY, 10, 20, CYAN);
+	circle.draw();
 }

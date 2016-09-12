@@ -114,14 +114,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Ball1.cpp" />
+    <ClCompile Include="Ball.cpp" />
     <ClCompile Include="Collision.cpp" />
     <ClCompile Include="GameState.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Paddles.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Ball1.h" />
+    <ClInclude Include="Ball.h" />
     <ClInclude Include="GameState.h" />
     <ClInclude Include="Header.h" />
     <ClInclude Include="Collisions.h" />
