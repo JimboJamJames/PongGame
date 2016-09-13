@@ -6,12 +6,12 @@
 //	float momentumY = 6;
 //
 //};
-struct Paddle2
+struct Paddle2S
 {
 	float x = 50, y = 300;
 	float size = 200;
 };
-struct Paddle1
+struct Paddle1S
 {
 	float x = 750, y = 300;
 	float size = 200;

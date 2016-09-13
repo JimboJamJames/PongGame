@@ -4,12 +4,15 @@
 #include "Header.h"
 #include "Collisions.h"
 #include "Ball.h"
+#include "Paddles.h"
 
 struct GameState
 {
 	Ball circle;
-	Paddle1 RightPaddle;
-	Paddle2 LeftPaddle;
+	//Paddle1 RightPaddle;
+	//Paddle2 LeftPaddle;
+
+	Paddle RightPaddle, LeftPaddle;
 
 	float acc = 0;
 	char c = '\0';

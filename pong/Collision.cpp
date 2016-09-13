@@ -1,4 +1,6 @@
 #include "Collisions.h"
+#include "Ball.h"
+#include "Paddles.h"
 
 void Collision(Ball &circle)
 {
@@ -20,7 +22,7 @@ void Collision(Ball &circle)
 	}
 }
 
-void Collision2(Ball &circle, const Paddle2 LeftPaddle)
+void Collision2(Ball &circle, const Paddle LeftPaddle)
 {
 	if (circle.ballX - 10 <= LeftPaddle.x &&circle.ballX + 10 >= LeftPaddle.x + 10)
 	{
@@ -32,7 +34,7 @@ void Collision2(Ball &circle, const Paddle2 LeftPaddle)
 
 }
 
-void Collision3(Ball &circle, const Paddle1 RightPaddle)
+void Collision3(Ball &circle, const Paddle RightPaddle)
 {
 	if (circle.ballX + 10 >= RightPaddle.x &&circle.ballX - 10 <= RightPaddle.x + 10)
 	{
