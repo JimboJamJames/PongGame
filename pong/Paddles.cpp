@@ -20,7 +20,7 @@ void Paddle1::update()
 }
 void Paddle1::draw() const
 {
-	sfw::drawLine(x, y, x, y + size, BLUE);
+	sfw::drawLine(x, y, x, y + size, WHITE);
 }
 void Paddle2::init()
 {
@@ -37,7 +37,7 @@ void Paddle2::update()
 }
 void Paddle2::draw() const
 {
-	sfw::drawLine(x, y, x, y + size, RED);
+	sfw::drawLine(x, y, x, y + size, WHITE);
 }
 
 
@@ -63,5 +63,5 @@ void Paddle::update()
 
 void Paddle::draw() const
 {
-	sfw::drawLine(x, y, x, y + size, color);
+	sfw::drawLine(x, y, x, y + size, WHITE);
 }
