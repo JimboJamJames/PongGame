@@ -15,5 +15,5 @@ void Ball::update()
 
 void Ball::draw() const
 {
-	sfw::drawCircle(ballX, ballY, 10, 20, RED);
+	sfw::drawCircle(ballX, ballY, 30, 30, RED);
 }
