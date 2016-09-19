@@ -2,15 +2,22 @@
 #include "Ball.h"
 #include "Paddles.h"
 
-void Collision(Ball &circle)
+// returns 0 when no score occurs, 1 and 2 when players score (respectively)
+int Collision(Ball &circle)
 {
 	if (circle.ballX + 10 >= 800)
 	{
 		circle.momentumX = circle.momentumX * -1;
+		circle.ballX = 400;
+		circle.ballY = 300;
+		return 1;
 	}
 	if (circle.ballX - 10 <= 0)
 	{
 		circle.momentumX = circle.momentumX * -1;
+		circle.ballX = 400;
+		circle.ballY = 300;
+		return 2;
 	}
 	if (circle.ballY + 10 >= 600)
 	{
@@ -20,6 +27,8 @@ void Collision(Ball &circle)
 	{
 		circle.momentumY = circle.momentumY * -1;
 	}
+
+	return 0;
 }
 
 void Collision2(Ball &circle, const Paddle LeftPaddle)

@@ -28,7 +28,7 @@ void main()
 
 	APP_STATE state = ENTER_SPLASH;
 
-	gs.init();
+	gs.init(font);
 	
 
 	bool quit = false;
@@ -49,8 +49,11 @@ void main()
 			break;
 		case GAME:
 			gs.update();
-			gs.draw();
+			
 			drawTexture(back, 400, 0, 400, 600, 0, false, 0, 0x88888888);
+			gs.draw();
+			
+
 			setBackgroundColor(WHITE);
 			break;
 		

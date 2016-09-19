@@ -6,21 +6,21 @@
 #include "Ball.h"
 #include "Paddles.h"
 
-struct GameState
+class GameState
 {
+public: 
 	Ball circle;
-	//Paddle1 RightPaddle;
-	//Paddle2 LeftPaddle;
-
+	
 	Paddle RightPaddle, LeftPaddle;
 
 	float acc = 0;
 	char c = '\0';
-
+	int font;
 
 	bool isXPositive = false, isYPositive = true;
 
-	void init();		// load files, setup players, etc.
+	void init(int a_font);		// load files, setup players, etc.
 	void update();		// input, collision, movement
 	void draw() const;
+	void drawScore() const;
 };
