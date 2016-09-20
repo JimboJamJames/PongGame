@@ -38,8 +38,8 @@ void GameState::drawScore() const
 {
 	char buffer[50];
 	char buffer2[50];
-	sprintf_s(buffer, 50, "P1 :: %d", LeftPaddle.score);
-	sprintf_s(buffer2, 50, "P2 :: %d", RightPaddle.score);
+	sprintf_s(buffer, 50, "Player 1 \n %d", LeftPaddle.score);
+	sprintf_s(buffer2, 50, "Player 2 \n %d", RightPaddle.score);
 	sfw::drawString(font, buffer, 200, 550, 16, 16, 0.0f, '\000', RED);
 	sfw::drawString(font, buffer2, 470, 550, 16, 16, 0.0f, '\000', RED);
 }
